@@ -12,27 +12,30 @@ def SWAP(Arr, a, b):
     Arr[b] = temp
     return Arr
 
-def QUICKSORT(Arr):
-    n = len(Arr)
-    if(n > 1):
-        p = (n-1)/2                         #pivot element
-        r = PARTITION(Arr, p)
-        QUICKSORT(Arr[0:r])
-        QUICKSORT(Arr[r+1:n])
+def QUICKSORT(Arr,l,h):
+    if(l < h):
+        r = PARTITION(Arr, l, h)
+        QUICKSORT(Arr,l,r-1)
+        QUICKSORT(Arr,r+1,h)
     return Arr
 
-def PARTITION(Arr, p):
-    n = len(Arr)
-    SWAP(Arr,p,n-1)
-    l = -1                              # num of items < pivot
-    for i in range(0,n-1):
-        if Arr[i] < Arr[n-1]:
-            l = l+1
-            SWAP(Arr,l,i)
-    SWAP(Arr,n-1,l+1)
-    return l+1
+def PARTITION(Arr,l,h):
+    idx = l
+    p = Arr[l]
+    while l < h:
+        while l < len(Arr) and Arr[l] <= p:
+            l += 1
+
+        while Arr[h] > p:
+            h -= 1
+            
+        if l < h:
+            SWAP(Arr,l,h)
+
+    SWAP(Arr,idx,h)
+    return h
 
 if __name__ == "__main__":
     print(A)
-    A = QUICKSORT(A)
+    A = QUICKSORT(A,0,len(A)-1)
     print(A)
