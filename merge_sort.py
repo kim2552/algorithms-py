@@ -15,7 +15,7 @@ m = 0
 def MERGESORT(Arr):
     n = len(Arr)
     if(n > 1):
-        m = n/2
+        m = int(n/2)
         Arr[0:m] = MERGESORT(Arr[0:m])
         Arr[m:n] = MERGESORT(Arr[m:n])
         Arr = MERGE(Arr, m)

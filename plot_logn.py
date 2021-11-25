@@ -13,7 +13,7 @@ def BINARY_SEARCH(Arr, lower_indx, upper_indx, num):
     count+=1
 
     if (n > 0):
-        middle = lower_indx + (n / 2)
+        middle = int(lower_indx + (n / 2))
         if(Arr[middle] < num):
             lower_indx = middle
         if(Arr[middle] > num):

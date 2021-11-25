@@ -118,7 +118,7 @@ for key in Reps:
 
 j = 0
 for j in range(1,np.abs(i-R)+1):
-    hp = max(PQ.iteritems(), key=operator.itemgetter(1))[0]
+    hp = max(PQ.items(), key=operator.itemgetter(1))[0]
     Reps[hp] += 1
     PQ[hp] = Pop[hp]/np.sqrt(Reps.get(hp)*(Reps.get(hp)+1))
 

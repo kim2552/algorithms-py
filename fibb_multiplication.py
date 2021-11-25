@@ -25,7 +25,7 @@ for k in range(0,n+m):
             if(i+j is k):
                 hold = hold + X[i]*Y[j]
     Z[k] = hold % 10
-    hold = hold/10
+    hold = int(hold/10)
 
 print("X=", X)
 print("Y=", Y)

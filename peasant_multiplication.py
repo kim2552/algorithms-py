@@ -20,9 +20,9 @@ y = y_orig
 
 prod = 0
 while x > 0:
-    if(x%2 is not 0):
+    if(x%2 != 0):
         prod = prod + y
-    x = x/2
+    x = int(x/2)
     y = y+y
 
 print("x=",x_orig)
